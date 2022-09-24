@@ -21,7 +21,6 @@ const TrendFollowing = () => {
           <Grid.HeaderItem textAlign='right'>CLOSE PRICE</Grid.HeaderItem>
           <Grid.HeaderItem textAlign='right'>CLOSE PRICE 50</Grid.HeaderItem>
           <Grid.HeaderItem textAlign='right'>CLOSE PRICE DIFF</Grid.HeaderItem>
-          <Grid.HeaderItem textAlign='right'>AVERAGE VALUE 50</Grid.HeaderItem>
         </Grid.Header>
         <Grid.Body>
           {state === 'hasValue' && contents.slice(0, 15).map(({
@@ -57,10 +56,6 @@ const TrendFollowing = () => {
               <Styled.NumberItem>
                 <Styled.NumberLabel>Close Price Diff</Styled.NumberLabel>
                 <Styled.NumberValue>{ClosePriceDiff.toFixed(4).toLocaleString()}</Styled.NumberValue>
-              </Styled.NumberItem>
-              <Styled.NumberItem>
-                <Styled.NumberLabel>Average Value 50</Styled.NumberLabel>
-                <Styled.NumberValue>{AverageValue50.toFixed(4).toLocaleString()}</Styled.NumberValue>
               </Styled.NumberItem>
             </Grid.Row>
           ))}

@@ -9,7 +9,7 @@ export const Row = styled.li`
   padding: 8px;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 
   &:hover {
