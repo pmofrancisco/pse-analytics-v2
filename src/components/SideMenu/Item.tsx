@@ -10,6 +10,7 @@ const Link = styled(BaseLink)`
   gap: 8px;
   padding: 8px;
   text-decoration: none;
+  transition: all 0.3s;
 
   &:hover {
     background-color: var(--gray-8);
