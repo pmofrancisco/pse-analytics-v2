@@ -5,7 +5,7 @@ export const Header = styled.div`
   border-bottom: 1px solid var(--gray-8);
   display: none;
   gap: 8px;
-  padding: 8px;
+  padding: 8px 0;
 
   @media (min-width: 768px) {
     display: flex;

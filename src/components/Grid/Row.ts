@@ -6,7 +6,7 @@ export const Row = styled.li`
   border-bottom: 1px solid var(--gray-8);
   display: grid;
   gap: 8px;
-  padding: 8px;
+  padding: 8px 0;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(7, 1fr);
