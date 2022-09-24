@@ -3,7 +3,9 @@ import { useRecoilValueLoadable} from 'recoil';
 
 import Grid from '../../components/Grid';
 import * as Feature from '../Feature.styled';
-import { ITrendFollowing, trendFollowingState } from './selectors';
+import { trendFollowingState } from './selectors';
+
+import * as Styled from './TrendFollowing.styled';
 
 const TrendFollowing = () => {
   const { contents, state } = useRecoilValueLoadable(trendFollowingState);
@@ -31,13 +33,31 @@ const TrendFollowing = () => {
             StockCode,
           }) => (
             <Grid.Row key={StockCode}>
-              <Grid.RowItem>{StockCode}</Grid.RowItem>
-              <Grid.RowItem textAlign='right'>{SMA50}</Grid.RowItem>
-              <Grid.RowItem textAlign='right'>{SMA100}</Grid.RowItem>
-              <Grid.RowItem textAlign='right'>{ClosePrice}</Grid.RowItem>
-              <Grid.RowItem textAlign='right'>{HighestClosePrice50}</Grid.RowItem>
-              <Grid.RowItem textAlign='right'>{ClosePriceDiff}</Grid.RowItem>
-              <Grid.RowItem textAlign='right'>{AverageValue50}</Grid.RowItem>
+              <Styled.StockCode>{StockCode}</Styled.StockCode>
+              <Styled.NumberItem>
+                <Styled.NumberLabel>SMA 50</Styled.NumberLabel>
+                <Styled.NumberValue>{SMA50.toFixed(4).toLocaleString()}</Styled.NumberValue>
+              </Styled.NumberItem>
+              <Styled.NumberItem>
+                <Styled.NumberLabel>SMA 100</Styled.NumberLabel>
+                <Styled.NumberValue>{SMA100.toFixed(4).toLocaleString()}</Styled.NumberValue>
+              </Styled.NumberItem>
+              <Styled.NumberItem>
+                <Styled.NumberLabel>Close Price</Styled.NumberLabel>
+                <Styled.NumberValue>{ClosePrice.toFixed(4).toLocaleString()}</Styled.NumberValue>
+              </Styled.NumberItem>
+              <Styled.NumberItem>
+                <Styled.NumberLabel>Highest Close Price 50</Styled.NumberLabel>
+                <Styled.NumberValue>{HighestClosePrice50.toFixed(4).toLocaleString()}</Styled.NumberValue>
+              </Styled.NumberItem>
+              <Styled.NumberItem>
+                <Styled.NumberLabel>Close Price Diff</Styled.NumberLabel>
+                <Styled.NumberValue>{ClosePriceDiff.toFixed(4).toLocaleString()}</Styled.NumberValue>
+              </Styled.NumberItem>
+              <Styled.NumberItem>
+                <Styled.NumberLabel>Average Value 50</Styled.NumberLabel>
+                <Styled.NumberValue>{AverageValue50.toFixed(4).toLocaleString()}</Styled.NumberValue>
+              </Styled.NumberItem>
             </Grid.Row>
           ))}
         </Grid.Body>
