@@ -11,6 +11,11 @@ export const Row = styled.li`
   @media (min-width: 768px) {
     grid-template-columns: repeat(7, 1fr);
   }
+
+  &:hover {
+    background-color: var(--gray-2);
+    cursor: pointer;
+  }
 `;
 
 export const RowItem = styled.div<{
