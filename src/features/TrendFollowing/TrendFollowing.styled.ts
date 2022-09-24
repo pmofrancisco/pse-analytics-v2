@@ -2,7 +2,14 @@ import styled from 'styled-components';
 import Grid from '../../components/Grid';
 
 export const StockCode = styled(Grid.RowItem)`
+  align-items: center;
+  display: flex;
   font-weight: bold;
+  gap: 8px;
+`;
+
+export const StockImage = styled.img`
+  width: 24px;
 `;
 
 export const NumberItem = styled(Grid.RowItem)`

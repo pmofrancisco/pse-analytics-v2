@@ -5,6 +5,7 @@ import Grid from '../../components/Grid';
 import * as Feature from '../Feature.styled';
 import { trendFollowingState } from './selectors';
 
+import { stockImages } from './stock-images';
 import * as Styled from './TrendFollowing.styled';
 
 const TrendFollowing = () => {
@@ -23,7 +24,7 @@ const TrendFollowing = () => {
           <Grid.HeaderItem textAlign='right'>AVERAGE VALUE 50</Grid.HeaderItem>
         </Grid.Header>
         <Grid.Body>
-          {state === 'hasValue' && contents.map(({
+          {state === 'hasValue' && contents.slice(0, 15).map(({
             AverageValue50,
             ClosePrice,
             ClosePriceDiff,
@@ -33,7 +34,10 @@ const TrendFollowing = () => {
             StockCode,
           }) => (
             <Grid.Row key={StockCode}>
-              <Styled.StockCode>{StockCode}</Styled.StockCode>
+              <Styled.StockCode>
+                <Styled.StockImage alt={StockCode} src={stockImages[StockCode] ?? stockImages.DEFAULT} />
+                {StockCode}
+              </Styled.StockCode>
               <Styled.NumberItem>
                 <Styled.NumberLabel>SMA 50</Styled.NumberLabel>
                 <Styled.NumberValue>{SMA50.toFixed(4).toLocaleString()}</Styled.NumberValue>
